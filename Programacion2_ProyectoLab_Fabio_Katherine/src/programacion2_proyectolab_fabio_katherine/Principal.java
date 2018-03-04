@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author KATHERINE
  */
 public class Principal extends javax.swing.JFrame {
-
+LISTA lista=new LISTA();
     /**
      * Creates new form Principal
      */
@@ -44,9 +44,9 @@ public class Principal extends javax.swing.JFrame {
         rb_femenino_c2 = new javax.swing.JRadioButton();
         rb_masculino_c2 = new javax.swing.JRadioButton();
         tf_nombre_c2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         tf_correo_c2 = new javax.swing.JTextField();
         jd_fecha_c2 = new com.toedter.calendar.JDateChooser();
+        tf_contraseña_c2 = new javax.swing.JPasswordField();
         jd_UsuarioComun = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -110,6 +110,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         ag_usuario_candidato.setText("Agregar");
+        ag_usuario_candidato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ag_usuario_candidatoMouseClicked(evt);
+            }
+        });
         ag_usuario_candidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ag_usuario_candidatoActionPerformed(evt);
@@ -132,17 +137,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
         tf_correo_c2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_correo_c2ActionPerformed(evt);
             }
         });
+
+        tf_contraseña_c2.setText("jPasswordField1");
 
         javax.swing.GroupLayout jd_UsuarioCandidatoLayout = new javax.swing.GroupLayout(jd_UsuarioCandidato.getContentPane());
         jd_UsuarioCandidato.getContentPane().setLayout(jd_UsuarioCandidatoLayout);
@@ -168,16 +169,12 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(jLabel14)
                     .addComponent(jLabel16))
-                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_correo_c2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                            .addComponent(jd_fecha_c2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(139, 139, 139))
+                .addGap(18, 18, 18)
+                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tf_correo_c2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                    .addComponent(jd_fecha_c2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tf_contraseña_c2))
+                .addGap(141, 141, 141))
             .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
                 .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
@@ -200,7 +197,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(tf_usuario_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_contraseña_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
@@ -459,10 +456,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_nombre_c2ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
     private void tf_correo_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_correo_c2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_correo_c2ActionPerformed
@@ -510,8 +503,14 @@ public class Principal extends javax.swing.JFrame {
         fecha_nacimiento=jd_fecha_c1.getDate();
         text=tf_archivo_c1.getText();
         //String direccion, String Archivo, String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre
-        this.usuario.add(new Usuario_comun(direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
-        JOptionPane.showMessageDialog(jd_UsuarioComun, "El usuario común se agregó con exito");
+//        this.usuario.add(new Usuario_comun(direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+
+        //lista enlazada
+        
+        lista.agregarAlInicio(new Usuario_comun(direccion, direccion, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+        lista.mostarlista();
+                JOptionPane.showMessageDialog(jd_UsuarioComun, "El usuario común se agregó con exito");
+
         
         tf_usuario_c1.setText("");
         tf_contraseña_c1.setText("");
@@ -538,6 +537,45 @@ public class Principal extends javax.swing.JFrame {
     private void tf_archivo_c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_archivo_c1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_archivo_c1ActionPerformed
+
+    private void ag_usuario_candidatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ag_usuario_candidatoMouseClicked
+        // TODO add your handling code here:
+          try {
+             String usuario="",contraseña="",nombre="",correo="",sexo="",direccion="",text="";
+        Date fecha_nacimiento;
+        usuario=tf_usuario_c2.getText();
+        contraseña=tf_contraseña_c2.getText();
+        nombre=tf_nombre_c2.getText();
+        correo=tf_correo_c2.getText();
+        if(rb_masculino_c2.isSelected()){
+            sexo="MASCULINO";
+        }else{
+            sexo="FEMENINO";
+            
+        }
+        fecha_nacimiento=jd_fecha_c2.getDate();
+       
+//        this.usuario.add(new Usuario_comun(direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+
+        //lista enlazada
+        //String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre
+        lista.agregarAlInicio(new Usuario_candidato(usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+        lista.mostarlista();
+        JOptionPane.showMessageDialog(jd_UsuarioComun, "El usuario común se agregó con exito");
+
+        
+        tf_usuario_c2.setText("");
+        tf_contraseña_c2.setText("");
+        tf_nombre_c2.setText("");
+        tf_correo_c2.setText("");
+        rb_masculino_c2.setSelected(true);
+        rb_femenino_c2.setSelected(false);
+        
+        } catch (Exception e) {
+             e.printStackTrace();
+            JOptionPane.showMessageDialog(jd_UsuarioComun, "ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_ag_usuario_candidatoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -612,7 +650,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JDialog jd_UsuarioCandidato;
     private javax.swing.JDialog jd_UsuarioComun;
     private com.toedter.calendar.JDateChooser jd_fecha_c1;
@@ -624,6 +661,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup sexo2;
     private javax.swing.JTextField tf_archivo_c1;
     private javax.swing.JPasswordField tf_contraseña_c1;
+    private javax.swing.JPasswordField tf_contraseña_c2;
     private javax.swing.JTextField tf_correo_c1;
     private javax.swing.JTextField tf_correo_c2;
     private javax.swing.JTextField tf_direccion_c1;
@@ -632,6 +670,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usuario_c1;
     private javax.swing.JTextField tf_usuario_c2;
     // End of variables declaration//GEN-END:variables
-ArrayList<Usuario> usuario=new ArrayList();
+//ArrayList<Usuario> usuario=new ArrayList();
 
 }
