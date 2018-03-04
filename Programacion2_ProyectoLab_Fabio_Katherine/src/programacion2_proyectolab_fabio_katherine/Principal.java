@@ -5,6 +5,10 @@
  */
 package programacion2_proyectolab_fabio_katherine;
 
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author KATHERINE
@@ -56,15 +60,18 @@ public class Principal extends javax.swing.JFrame {
         tf_usuario_c1 = new javax.swing.JTextField();
         tf_nombre_c1 = new javax.swing.JTextField();
         tf_correo_c1 = new javax.swing.JTextField();
-        tf_contraseña_c1 = new javax.swing.JTextField();
         tf_direccion_c1 = new javax.swing.JTextField();
         tf_archivo_c1 = new javax.swing.JTextField();
         rb_femenino_c1 = new javax.swing.JRadioButton();
         rb_masculino_c1 = new javax.swing.JRadioButton();
         ag_usuario_comun = new javax.swing.JButton();
         jd_fecha_c1 = new com.toedter.calendar.JDateChooser();
+        tf_contraseña_c1 = new javax.swing.JPasswordField();
         sexo2 = new javax.swing.ButtonGroup();
         Sexo = new javax.swing.ButtonGroup();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         jLabel17 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -72,7 +79,14 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel10.setText("Usuario Candidato");
@@ -236,12 +250,23 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        tf_archivo_c1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_archivo_c1ActionPerformed(evt);
+            }
+        });
+
         rb_femenino_c1.setText("F");
 
         rb_masculino_c1.setSelected(true);
         rb_masculino_c1.setText("M");
 
         ag_usuario_comun.setText("Agregar");
+        ag_usuario_comun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ag_usuario_comunMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_UsuarioComunLayout = new javax.swing.GroupLayout(jd_UsuarioComun.getContentPane());
         jd_UsuarioComun.getContentPane().setLayout(jd_UsuarioComunLayout);
@@ -278,14 +303,14 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                                     .addComponent(jd_fecha_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                                .addComponent(tf_correo_c1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(96, 96, 96)
-                                .addComponent(tf_contraseña_c1))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioComunLayout.createSequentialGroup()
+                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_correo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                    .addComponent(tf_contraseña_c1)))))
                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
@@ -302,14 +327,14 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
-                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
-                        .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(tf_usuario_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_contraseña_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
+                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_usuario_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_contraseña_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioComunLayout.createSequentialGroup()
                         .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jLabel5)
@@ -321,7 +346,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(rb_femenino_c1)
                             .addComponent(rb_masculino_c1)))
-                    .addComponent(jd_fecha_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jd_fecha_c1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -332,6 +357,12 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(ag_usuario_comun, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
         );
+
+        jMenu6.setText("File");
+        jMenuBar2.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar2.add(jMenu7);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -366,8 +397,35 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Extra");
-        jMenuBar1.add(jMenu2);
+        jMenu5.setText("Usuario Común");
+
+        jMenuItem3.setText("Perfil");
+        jMenu5.add(jMenuItem3);
+
+        jMenuItem6.setText("Ver Usuarios");
+        jMenu5.add(jMenuItem6);
+
+        jMenuItem7.setText("Ver Candidatos");
+        jMenu5.add(jMenuItem7);
+
+        jMenuItem4.setText("Publicaciones Presidenciales");
+        jMenu5.add(jMenuItem4);
+
+        jMenuItem8.setText("Messenger");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem8);
+
+        jMenuItem5.setText("Actas");
+        jMenu5.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu8.setText("Usuario Candidato");
+        jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
 
@@ -429,6 +487,58 @@ public class Principal extends javax.swing.JFrame {
         jd_UsuarioComun.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void ag_usuario_comunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ag_usuario_comunMouseClicked
+        // TODO add your handling code here:
+        try {
+             String usuario="",contraseña="",nombre="",correo="",sexo="",direccion="",text="";
+        Date fecha_nacimiento;
+        usuario=tf_usuario_c1.getText();
+        contraseña=tf_contraseña_c1.getText();
+        nombre=tf_nombre_c1.getText();
+        correo=tf_correo_c1.getText();
+        if(rb_masculino_c1.isSelected()){
+            sexo="MASCULINO";
+        }else{
+            sexo="FEMENINO";
+            
+        }
+        direccion=tf_direccion_c1.getText();
+        fecha_nacimiento=jd_fecha_c1.getDate();
+        text=tf_archivo_c1.getText();
+        //String direccion, String Archivo, String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre
+        this.usuario.add(new Usuario_comun(direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+        JOptionPane.showMessageDialog(jd_UsuarioComun, "El usuario común se agregó con exito");
+        
+        tf_usuario_c1.setText("");
+        tf_contraseña_c1.setText("");
+        tf_nombre_c1.setText("");
+        tf_correo_c1.setText("");
+        tf_direccion_c1.setText("");
+        tf_archivo_c1.setText("");
+        rb_masculino_c1.setSelected(true);
+        rb_femenino_c1.setSelected(false);
+        
+        } catch (Exception e) {
+             e.printStackTrace();
+            JOptionPane.showMessageDialog(jd_UsuarioComun, "ocurrio un error y no se guardaron los datos");
+        }
+       
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_ag_usuario_comunMouseClicked
+
+    private void tf_archivo_c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_archivo_c1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_archivo_c1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -486,12 +596,22 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JDialog jd_UsuarioCandidato;
     private javax.swing.JDialog jd_UsuarioComun;
@@ -503,7 +623,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_masculino_c2;
     private javax.swing.ButtonGroup sexo2;
     private javax.swing.JTextField tf_archivo_c1;
-    private javax.swing.JTextField tf_contraseña_c1;
+    private javax.swing.JPasswordField tf_contraseña_c1;
     private javax.swing.JTextField tf_correo_c1;
     private javax.swing.JTextField tf_correo_c2;
     private javax.swing.JTextField tf_direccion_c1;
@@ -512,4 +632,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usuario_c1;
     private javax.swing.JTextField tf_usuario_c2;
     // End of variables declaration//GEN-END:variables
+ArrayList<Usuario> usuario=new ArrayList();
+
 }
