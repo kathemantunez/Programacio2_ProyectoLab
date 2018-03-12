@@ -219,17 +219,6 @@
                           </Group>
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="59" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tf_archivo_c1" pref="214" max="32767" attributes="0"/>
-                                      <Component id="jd_fecha_c1" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -239,6 +228,23 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="tf_correo_c1" pref="214" max="32767" attributes="0"/>
                                       <Component id="tf_contraseña_c1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="59" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tf_archivo_c1" pref="214" max="32767" attributes="0"/>
+                                          <Component id="jd_fecha_c1" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -296,7 +302,9 @@
                       <Component id="tf_direccion_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_archivo_c1" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="54" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
                   <Component id="ag_usuario_comun" min="-2" pref="51" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
@@ -391,6 +399,14 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="tf_contrase&#xf1;a_c1">
         </Component>
+        <Component class="javax.swing.JButton" name="jButton6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="guardar archivo texto"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.ButtonGroup" name="sexo2">
@@ -440,6 +456,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jButton1" min="-2" pref="182" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -521,7 +539,10 @@
                               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="73" max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -601,6 +622,14 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="VER DATOS PERFIL"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -696,7 +725,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jScrollPane2" pref="288" max="32767" attributes="0"/>
-                              <Component id="jButton3" max="32767" attributes="0"/>
+                              <Component id="agregar_amigos" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="158" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -718,7 +747,7 @@
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton2" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="agregar_amigos" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="96" max="32767" attributes="0"/>
                       </Group>
@@ -733,7 +762,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jl_usuarios">
+                    <Component class="javax.swing.JList" name="lista_amigos">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new DefaultListModel()" type="code"/>
@@ -750,10 +779,13 @@
                     <Property name="text" type="java.lang.String" value="Eliminar de mis amigos"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="agregar_amigos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar a mis amigos"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="agregar_amigosMouseClicked"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane3">
                   <AuxValues>

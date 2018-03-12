@@ -5,10 +5,15 @@
  */
 package programacion2_proyectolab_fabio_katherine;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -71,6 +76,7 @@ LISTA lista=new LISTA();
         ag_usuario_comun = new javax.swing.JButton();
         jd_fecha_c1 = new com.toedter.calendar.JDateChooser();
         tf_contraseña_c1 = new javax.swing.JPasswordField();
+        jButton6 = new javax.swing.JButton();
         sexo2 = new javax.swing.ButtonGroup();
         Sexo = new javax.swing.ButtonGroup();
         jd_menu_usuario_comun = new javax.swing.JDialog();
@@ -94,6 +100,7 @@ LISTA lista=new LISTA();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jl_candidatos = new javax.swing.JList<>();
@@ -101,9 +108,9 @@ LISTA lista=new LISTA();
         jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jl_usuarios = new javax.swing.JList<>();
+        lista_amigos = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        agregar_amigos = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_amigos = new javax.swing.JList<>();
         jPanel4 = new javax.swing.JPanel();
@@ -298,6 +305,13 @@ LISTA lista=new LISTA();
             }
         });
 
+        jButton6.setText("guardar archivo texto");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_UsuarioComunLayout = new javax.swing.GroupLayout(jd_UsuarioComun.getContentPane());
         jd_UsuarioComun.getContentPane().setLayout(jd_UsuarioComunLayout);
         jd_UsuarioComunLayout.setHorizontalGroup(
@@ -325,14 +339,6 @@ LISTA lista=new LISTA();
                                 .addComponent(rb_masculino_c1)))
                         .addGap(82, 82, 82)
                         .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
-                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                                    .addComponent(jd_fecha_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioComunLayout.createSequentialGroup()
                                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
@@ -340,7 +346,19 @@ LISTA lista=new LISTA();
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf_correo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                                    .addComponent(tf_contraseña_c1)))))
+                                    .addComponent(tf_contraseña_c1)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioComunLayout.createSequentialGroup()
+                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jButton6))
+                                    .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                        .addComponent(jd_fecha_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
@@ -383,7 +401,9 @@ LISTA lista=new LISTA();
                     .addComponent(jLabel9)
                     .addComponent(tf_direccion_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_archivo_c1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(ag_usuario_comun, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
         );
@@ -410,6 +430,13 @@ LISTA lista=new LISTA();
 
         jButton1.setText("Modificar");
 
+        jButton3.setText("VER DATOS PERFIL");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -419,6 +446,8 @@ LISTA lista=new LISTA();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(164, 164, 164)
+                        .addComponent(jButton3)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,7 +511,9 @@ LISTA lista=new LISTA();
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
                 .addGap(134, 134, 134))
         );
 
@@ -525,12 +556,17 @@ LISTA lista=new LISTA();
 
         uc.addTab("Ver Candidatos", jPanel3);
 
-        jl_usuarios.setModel(new DefaultListModel());
-        jScrollPane2.setViewportView(jl_usuarios);
+        lista_amigos.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(lista_amigos);
 
         jButton2.setText("Eliminar de mis amigos");
 
-        jButton3.setText("Agregar a mis amigos");
+        agregar_amigos.setText("Agregar a mis amigos");
+        agregar_amigos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregar_amigosMouseClicked(evt);
+            }
+        });
 
         jScrollPane3.setViewportView(jl_amigos);
 
@@ -542,7 +578,7 @@ LISTA lista=new LISTA();
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(agregar_amigos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -559,7 +595,7 @@ LISTA lista=new LISTA();
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(agregar_amigos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -761,13 +797,16 @@ LISTA lista=new LISTA();
         
         lista.agregarAlInicio(new Usuario_comun(nombre,direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
         lista.mostarlista();
-        DefaultListModel modelo=(DefaultListModel)jl_usuarios.getModel();
-            modelo.addElement(new Usuario_comun(nombre,direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
-           jl_usuarios.setModel(modelo);
+//        DefaultListModel modelo=(DefaultListModel)lista_amigos.getModel();
+//            modelo.addElement(new Usuario_comun(nombre,direccion, text, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
+//           lista_amigos.setModel(modelo);
            
                 JOptionPane.showMessageDialog(jd_UsuarioComun, "El usuario común se agregó con exito");
                 
            
+        //agregar a la lista de amigos
+        DefaultListModel modelo2=(DefaultListModel)lista_amigos.getModel();
+            modelo2.addElement(new Usuario_comun(direccion, direccion, nombre, usuario, contraseña, fecha_nacimiento, correo, sexo, nombre));
         
         tf_usuario_c1.setText("");
         tf_contraseña_c1.setText("");
@@ -847,6 +886,58 @@ LISTA lista=new LISTA();
         
     }//GEN-LAST:event_Menu_Usuario_ComunMouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        //guardar archivo text0
+          JFileChooser jfc=new JFileChooser();
+        FileNameExtensionFilter filtro=new FileNameExtensionFilter("Archivos de Texto", "txt");
+        jfc.addChoosableFileFilter(filtro);
+        
+        int seleccion=jfc.showSaveDialog(this);
+        
+        FileWriter fw=null;
+        BufferedWriter bw=null;
+        
+        if(seleccion==JFileChooser.APPROVE_OPTION){
+            try {
+               File fichero=null;
+               //capturar el tipo que fue seleccionadpo
+               if(jfc.getFileFilter().getDescription().equals("Archivos de Texto")){
+                   fichero=new File(jfc.getSelectedFile().getPath()+".txt");
+                   
+               }else{
+                   fichero=jfc.getSelectedFile();
+               }
+               fw=new FileWriter(fichero);
+               bw=new BufferedWriter(fw);
+               bw.write(tf_archivo_c1.getText());
+               tf_archivo_c1.setText("");
+               bw.flush();
+             
+               JOptionPane.showMessageDialog(this, "Archivo guardado exitosamente");
+               
+            } catch (Exception e) {
+                 e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void agregar_amigosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_amigosMouseClicked
+        // TODO add your handling code here:
+        int x=jl_amigos.getSelectedIndex();
+        if(x>=0){
+            
+        }else{
+            JOptionPane.showMessageDialog(jd_menu_usuario_comun, "Fila no seleccionada");
+        }
+    }//GEN-LAST:event_agregar_amigosMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -888,11 +979,13 @@ LISTA lista=new LISTA();
     private javax.swing.ButtonGroup Sexo;
     private javax.swing.JButton ag_usuario_candidato;
     private javax.swing.JButton ag_usuario_comun;
+    private javax.swing.JButton agregar_amigos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -953,7 +1046,7 @@ LISTA lista=new LISTA();
     private javax.swing.JDialog jd_menu_usuario_comun;
     private javax.swing.JList<String> jl_amigos;
     private javax.swing.JList<String> jl_candidatos;
-    private javax.swing.JList<String> jl_usuarios;
+    private javax.swing.JList<String> lista_amigos;
     private javax.swing.JRadioButton rb_femenino_c1;
     private javax.swing.JRadioButton rb_femenino_c2;
     private javax.swing.JRadioButton rb_masculino_c1;
@@ -972,5 +1065,5 @@ LISTA lista=new LISTA();
     private javax.swing.JTabbedPane uc;
     // End of variables declaration//GEN-END:variables
 //ArrayList<Usuario> usuario=new ArrayList();
-
+Amigos AMIGO=new Amigos();
 }
