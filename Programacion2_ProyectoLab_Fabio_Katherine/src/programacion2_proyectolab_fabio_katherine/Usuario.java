@@ -79,10 +79,13 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+   
+
     @Override
     public String toString() {
         return "Usuario{" + "nombre_usuario=" + nombre_usuario + ", contrase\u00f1a=" + contraseña + ", fecha_nacimiento=" + fecha_nacimiento + ", correo=" + correo + ", sexo=" + sexo + ", nombre=" + nombre + '}';
     }
+    
     
     
     

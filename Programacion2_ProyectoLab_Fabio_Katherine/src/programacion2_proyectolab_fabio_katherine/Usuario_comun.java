@@ -18,16 +18,27 @@ public class Usuario_comun extends Usuario{
     private ArrayList<Candidatos> candidatos=new ArrayList();
     private String Archivo;//cambiar
     private ArrayList<Amigos> amigos=new ArrayList();
+    private String name;
 
     public Usuario_comun() {
     }
 
-    public Usuario_comun(String direccion, String Archivo, String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre) {
+    public Usuario_comun(String direccion, String Archivo, String name, String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre) {
         super(nombre_usuario, contraseña, fecha_nacimiento, correo, sexo, nombre);
         this.direccion = direccion;
         this.Archivo = Archivo;
+        this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+   
     
 
     public String getDireccion() {
@@ -72,8 +83,10 @@ public class Usuario_comun extends Usuario{
 
     @Override
     public String toString() {
-        return "Usuario_comun{" + "direccion=" + direccion + ", correos=" + correos + ", candidatos=" + candidatos + ", Archivo=" + Archivo + ", amigos=" + amigos + '}';
+        return "Usuario_comun{" + "direccion=" + direccion + ", correos=" + correos + ", candidatos=" + candidatos + ", Archivo=" + Archivo + ", amigos=" + amigos + ", name=" + name + '}';
     }
+
+  
 
    
     

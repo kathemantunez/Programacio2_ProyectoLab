@@ -16,13 +16,25 @@ public class Usuario_candidato extends Usuario{
     private ArrayList<Certificaciones> certificaciones=new ArrayList();
     private ArrayList<Publicaciones> publicaciones=new ArrayList();
     private ArrayList<Seguidores> seguidores=new ArrayList();
+    private String name;
 
     public Usuario_candidato() {
     }
 
-    public Usuario_candidato(String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre) {
+    public Usuario_candidato(String name, String nombre_usuario, String contraseña, Date fecha_nacimiento, String correo, String sexo, String nombre) {
         super(nombre_usuario, contraseña, fecha_nacimiento, correo, sexo, nombre);
+        this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
 
     public ArrayList<Certificaciones> getCertificaciones() {
         return certificaciones;
@@ -50,7 +62,9 @@ public class Usuario_candidato extends Usuario{
 
     @Override
     public String toString() {
-        return "Usuario_candidato{" + "certificaciones=" + certificaciones + ", publicaciones=" + publicaciones + ", seguidores=" + seguidores + '}';
+        return "Usuario_candidato{" + "certificaciones=" + certificaciones + ", publicaciones=" + publicaciones + ", seguidores=" + seguidores + ", name=" + name + '}';
     }
+
+    
     
 }
