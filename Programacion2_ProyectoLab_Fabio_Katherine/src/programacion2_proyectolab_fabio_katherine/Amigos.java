@@ -5,10 +5,25 @@
  */
 package programacion2_proyectolab_fabio_katherine;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author KATHERINE
  */
 public class Amigos {
+    private ArrayList<Usuario>amigos=new ArrayList();
+
+    public Amigos() {
+    }
+
+    public ArrayList<Usuario> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(ArrayList<Usuario> amigos) {
+        this.amigos = amigos;
+    }
+    
     
 }
