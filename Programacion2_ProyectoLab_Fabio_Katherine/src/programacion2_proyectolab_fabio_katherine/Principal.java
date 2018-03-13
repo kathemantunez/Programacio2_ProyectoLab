@@ -54,9 +54,15 @@ LISTA amigos=new LISTA();
         rb_femenino_c2 = new javax.swing.JRadioButton();
         rb_masculino_c2 = new javax.swing.JRadioButton();
         tf_nombre_c2 = new javax.swing.JTextField();
+
+        tf_contraseña_c2 = new javax.swing.JTextField();
+        tf_correo_c2 = new javax.swing.JTextField();
+
         tf_correo_c2 = new javax.swing.JTextField();
         tf_contraseña_c2 = new javax.swing.JPasswordField();
+
         jd_fecha_c2 = new com.toedter.calendar.JDateChooser();
+
         jd_UsuarioComun = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -75,6 +81,14 @@ LISTA amigos=new LISTA();
         rb_femenino_c1 = new javax.swing.JRadioButton();
         rb_masculino_c1 = new javax.swing.JRadioButton();
         ag_usuario_comun = new javax.swing.JButton();
+
+
+        sexo2 = new javax.swing.ButtonGroup();
+        Sexo = new javax.swing.ButtonGroup();
+        Inicio_Sesion = new javax.swing.JDialog();
+
+        jd_fecha_c1 = new com.toedter.calendar.JDateChooser();
+
         tf_contraseña_c1 = new javax.swing.JPasswordField();
         jButton6 = new javax.swing.JButton();
         jd_fecha_c1 = new com.toedter.calendar.JDateChooser();
@@ -82,10 +96,16 @@ LISTA amigos=new LISTA();
         Sexo = new javax.swing.ButtonGroup();
         jd_menu_usuario_comun = new javax.swing.JDialog();
         uc = new javax.swing.JTabbedPane();
+
         jPanel1 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+
+        l_usuario = new javax.swing.JTextField();
+        l_contraseña = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -121,15 +141,21 @@ LISTA amigos=new LISTA();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
+
         jLabel17 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+
         jMenu4 = new javax.swing.JMenu();
         Menu_Usuario_Comun = new javax.swing.JMenu();
         Menu_Usuario_Candidato = new javax.swing.JMenu();
+
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel10.setText("Usuario Candidato");
@@ -180,6 +206,13 @@ LISTA amigos=new LISTA();
             }
         });
 
+
+        tf_contraseña_c2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_contraseña_c2ActionPerformed(evt);
+            }
+        });
+
         tf_correo_c2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_correo_c2ActionPerformed(evt);
@@ -199,23 +232,34 @@ LISTA amigos=new LISTA();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tf_nombre_c2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                        .addComponent(tf_nombre_c2)
                         .addComponent(tf_usuario_c2))
                     .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
                         .addComponent(rb_femenino_c2)
                         .addGap(18, 18, 18)
                         .addComponent(rb_masculino_c2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(jLabel14)
                     .addComponent(jLabel16))
+
+                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(tf_contraseña_c2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_correo_c2)))
+                .addGap(139, 139, 139))
+
                 .addGap(18, 18, 18)
                 .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tf_correo_c2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                     .addComponent(tf_contraseña_c2)
                     .addComponent(jd_fecha_c2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(141, 141, 141))
+
             .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
                 .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
@@ -230,11 +274,24 @@ LISTA amigos=new LISTA();
             jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tf_usuario_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(tf_contraseña_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(58, 58, 58)
                         .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                            .addComponent(jLabel13)
+                            .addComponent(tf_nombre_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_UsuarioCandidatoLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+
                             .addComponent(jLabel11)
                             .addComponent(tf_usuario_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
@@ -252,12 +309,16 @@ LISTA amigos=new LISTA();
                                     .addComponent(jLabel14)
                                     .addComponent(tf_correo_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(46, 46, 46)
+
                         .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addComponent(rb_femenino_c2)
-                            .addComponent(rb_masculino_c2)))
-                    .addComponent(jd_fecha_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel14)
+                            .addComponent(tf_correo_c2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(46, 46, 46)
+                .addGroup(jd_UsuarioCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16)
+                    .addComponent(rb_femenino_c2)
+                    .addComponent(rb_masculino_c2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(ag_usuario_candidato, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(102, 102, 102))
@@ -329,7 +390,7 @@ LISTA amigos=new LISTA();
                                     .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_direccion_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(tf_direccion_c1)
                                     .addComponent(tf_nombre_c1)
                                     .addComponent(tf_usuario_c1)))
                             .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
@@ -353,19 +414,41 @@ LISTA amigos=new LISTA();
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel9))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+
                                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addComponent(jButton6))
                                     .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                                     .addComponent(jd_fecha_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+
+
+                                .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                            .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_correo_c1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(96, 96, 96)
+                                .addComponent(tf_contraseña_c1))))
+
+                                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jButton6))
+                                    .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tf_archivo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                        .addComponent(jd_fecha_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+
+
                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addGap(273, 273, 273)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioComunLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 49, Short.MAX_VALUE)
                 .addComponent(ag_usuario_comun, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(356, 356, 356))
         );
@@ -381,12 +464,20 @@ LISTA amigos=new LISTA();
                     .addComponent(tf_usuario_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_contraseña_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
+
                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel5)
                     .addComponent(tf_nombre_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_correo_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
+
+                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
+                    .addComponent(rb_femenino_c1)
+                    .addComponent(rb_masculino_c1))
+
                 .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                         .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -408,7 +499,33 @@ LISTA amigos=new LISTA();
                     .addGroup(jd_UsuarioComunLayout.createSequentialGroup()
                         .addComponent(jd_fecha_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(rb_masculino_c1)))
+                    .addComponent(jd_fecha_c1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+
+                .addGap(39, 39, 39)
+                .addGroup(jd_UsuarioComunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(tf_direccion_c1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_archivo_c1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(ag_usuario_comun, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
+
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel18.setText("Login");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel19.setText("Nombre de Usuario");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel20.setText("Contraseña");
+
+        jButton3.setText("Login");
 
         jLabel18.setText("Nombre");
 
@@ -439,11 +556,31 @@ LISTA amigos=new LISTA();
             }
         });
 
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(l_usuario)
+                            .addComponent(l_contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jLabel18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(242, 242, 242)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(146, Short.MAX_VALUE))
+
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -483,10 +620,37 @@ LISTA amigos=new LISTA();
                                 .addGap(46, 46, 46)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(147, Short.MAX_VALUE))))
+
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addComponent(l_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(l_contraseña))
+                .addGap(78, 78, 78)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Inicio_SesionLayout = new javax.swing.GroupLayout(Inicio_Sesion.getContentPane());
+        Inicio_Sesion.getContentPane().setLayout(Inicio_SesionLayout);
+        Inicio_SesionLayout.setHorizontalGroup(
+            Inicio_SesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        Inicio_SesionLayout.setVerticalGroup(
+            Inicio_SesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -672,6 +836,7 @@ LISTA amigos=new LISTA();
                 .addContainerGap()
                 .addComponent(uc)
                 .addContainerGap())
+
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -702,8 +867,13 @@ LISTA amigos=new LISTA();
 
         jMenu1.add(jMenu3);
 
-        jMenu4.setText("Login");
-        jMenu1.add(jMenu4);
+        jMenuItem3.setText("Login");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
@@ -750,6 +920,12 @@ LISTA amigos=new LISTA();
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_nombre_c2ActionPerformed
 
+
+    private void tf_contraseña_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contraseña_c2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_contraseña_c2ActionPerformed
+
+
     private void tf_correo_c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_correo_c2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_correo_c2ActionPerformed
@@ -773,6 +949,14 @@ LISTA amigos=new LISTA();
         jd_UsuarioComun.setLocationRelativeTo(this);
         jd_UsuarioComun.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+       Inicio_Sesion.setModal(true);
+       Inicio_Sesion.pack();
+       Inicio_Sesion.setLocationRelativeTo(this);
+       Inicio_Sesion.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void ag_usuario_comunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ag_usuario_comunMouseClicked
         // TODO add your handling code here:
@@ -946,6 +1130,7 @@ LISTA amigos=new LISTA();
         
     }//GEN-LAST:event_jButton3MouseClicked
 
+
     /**
      * @param args the command line arguments
      */
@@ -982,6 +1167,13 @@ LISTA amigos=new LISTA();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
+    private javax.swing.JDialog Inicio_Sesion;
+    private javax.swing.ButtonGroup Sexo;
+    private javax.swing.JButton ag_usuario_candidato;
+    private javax.swing.JButton ag_usuario_comun;
+    private javax.swing.JButton jButton3;
+
     private javax.swing.JMenu Menu_Usuario_Candidato;
     private javax.swing.JMenu Menu_Usuario_Comun;
     private javax.swing.ButtonGroup Sexo;
@@ -994,6 +1186,7 @@ LISTA amigos=new LISTA();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1007,12 +1200,14 @@ LISTA amigos=new LISTA();
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1022,10 +1217,17 @@ LISTA amigos=new LISTA();
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JDialog jd_UsuarioCandidato;
+    private javax.swing.JDialog jd_UsuarioComun;
+    private javax.swing.JTextField l_contraseña;
+    private javax.swing.JTextField l_usuario;
+
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1048,7 +1250,9 @@ LISTA amigos=new LISTA();
     private javax.swing.JDialog jd_menu_usuario_comun;
     private javax.swing.JList<String> jl_candidatos;
     private javax.swing.JList<String> lista_amigos;
+
     private javax.swing.JList<String> lista_usuarios_preamigos;
+
     private javax.swing.JRadioButton rb_femenino_c1;
     private javax.swing.JRadioButton rb_femenino_c2;
     private javax.swing.JRadioButton rb_masculino_c1;
@@ -1059,6 +1263,13 @@ LISTA amigos=new LISTA();
     private javax.swing.JPasswordField tf_contraseña_c1;
     private javax.swing.JPasswordField tf_contraseña_c2;
     private javax.swing.JTextField tf_correo1;
+
+    private javax.swing.JTextField tf_contraseña_c1;
+    private javax.swing.JTextField tf_contraseña_c2;
+
+    private javax.swing.JPasswordField tf_contraseña_c1;
+    private javax.swing.JPasswordField tf_contraseña_c2;
+
     private javax.swing.JTextField tf_correo_c1;
     private javax.swing.JTextField tf_correo_c2;
     private javax.swing.JTextField tf_direccion1;
