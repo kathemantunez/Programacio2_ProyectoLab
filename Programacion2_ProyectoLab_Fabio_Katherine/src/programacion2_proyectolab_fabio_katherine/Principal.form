@@ -44,8 +44,8 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="tf_correo_c2" pref="166" max="32767" attributes="0"/>
-                      <Component id="jd_fecha_c2" max="32767" attributes="0"/>
                       <Component id="tf_contraseña_c2" max="32767" attributes="0"/>
+                      <Component id="jd_fecha_c2" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
               </Group>
@@ -60,7 +60,7 @@
                           <Component id="ag_usuario_candidato" min="-2" pref="148" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="271" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -217,11 +217,18 @@
           </Events>
         </Component>
 
+        <Component class="javax.swing.JPasswordField" name="tf_contrase&#xf1;a_c2">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="jd_fecha_c2">
+        </Component>
+
+
 
         <Component class="com.toedter.calendar.JDateChooser" name="jd_fecha_c2">
         </Component>
         <Component class="javax.swing.JPasswordField" name="tf_contrase&#xf1;a_c2">
         </Component>
+
 
       </SubComponents>
     </Container>
@@ -276,6 +283,9 @@
                                   </Group>
                                   <EmptySpace pref="59" max="32767" attributes="0"/>
 
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+
+
                                   <Component id="tf_archivo_c1" pref="214" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -290,14 +300,13 @@
                               </Group>
 
                                   <Group type="103" groupAlignment="0" attributes="0">
+
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                           <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="tf_archivo_c1" pref="214" max="32767" attributes="0"/>
-                                          <Component id="jd_fecha_c1" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="tf_archivo_c1" pref="214" max="32767" attributes="0"/>
+                                      <Component id="jd_fecha_c1" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
 
@@ -339,28 +348,40 @@
                       <Component id="tf_correo_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rb_femenino_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rb_masculino_c1" alignment="3" min="-2" max="-2" attributes="0"/>
 
+
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf_nombre_c1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf_correo_c1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_femenino_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_masculino_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_direccion_c1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_archivo_c1" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
+                          <Component id="ag_usuario_comun" min="-2" pref="51" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jd_fecha_c1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+
                       <Component id="jd_fecha_c1" alignment="1" min="-2" max="-2" attributes="0"/>
 
                   </Group>
@@ -370,12 +391,8 @@
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_direccion_c1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_archivo_c1" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
+
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
-                  <Component id="ag_usuario_comun" min="-2" pref="51" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -465,8 +482,10 @@
           </Events>
         </Component>
 
+
         <Component class="com.toedter.calendar.JDateChooser" name="jd_fecha_c1">
         </Component>
+
         <Component class="javax.swing.JPasswordField" name="tf_contrase&#xf1;a_c1">
         </Component>
         <Component class="javax.swing.JButton" name="jButton6">
@@ -476,6 +495,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
           </Events>
+        </Component>
+
+        <Component class="com.toedter.calendar.JDateChooser" name="jd_fecha_c1">
         </Component>
 
       </SubComponents>
@@ -629,7 +651,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jButton1" min="-2" pref="182" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -642,10 +664,10 @@
                                   </Group>
                                   <EmptySpace min="62" pref="34" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField2" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <Component id="jTextField6" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <Component id="jTextField9" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="tf_usuario1" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="tf_nombre1" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="tf_correo1" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="tf_contraseña1" min="-2" pref="127" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -653,17 +675,17 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jTextField7" min="-2" pref="127" max="-2" attributes="0"/>
+                                              <Component id="tf_direccion1" min="-2" pref="127" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jTextField1" min="-2" pref="127" max="-2" attributes="0"/>
+                                              <Component id="jd_fecha1" min="-2" pref="127" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                                              <Component id="jTextField4" min="-2" pref="127" max="-2" attributes="0"/>
+                                              <Component id="tf_sexo1" min="-2" pref="127" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -685,36 +707,36 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_sexo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_nombre1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jd_fecha1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_usuario1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_direccion1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_contraseña1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tf_correo1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="73" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" pref="72" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButton1" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                       </Group>
@@ -762,19 +784,19 @@
                     <Property name="text" type="java.lang.String" value="Archivo de Texto"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="jd_fecha1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="tf_usuario1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="tf_nombre1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="tf_sexo1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="tf_correo1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="tf_direccion1">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
+                <Component class="javax.swing.JTextField" name="tf_contrase&#xf1;a1">
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">
                   <AuxValues>
@@ -935,7 +957,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="lista_amigos">
+                    <Component class="javax.swing.JList" name="lista_usuarios_preamigos">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new DefaultListModel()" type="code"/>
@@ -967,7 +989,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jl_amigos">
+                    <Component class="javax.swing.JList" name="lista_amigos">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>

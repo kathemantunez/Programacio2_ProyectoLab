@@ -12,18 +12,37 @@ import java.util.ArrayList;
  * @author KATHERINE
  */
 public class Amigos {
-    private ArrayList<Usuario>amigos=new ArrayList();
+    private Amigos nombre;
 
     public Amigos() {
     }
 
-    public ArrayList<Usuario> getAmigos() {
-        return amigos;
+//    public ArrayList<Usuario> getAmigos() {
+//        return amigos;
+//    }
+//
+//    public void setAmigos(ArrayList<Usuario> amigos) {
+//        this.amigos = amigos;
+//    }
+//    
+
+    public Amigos(Amigos nombre) {
+        this.nombre = nombre;
     }
 
-    public void setAmigos(ArrayList<Usuario> amigos) {
-        this.amigos = amigos;
+    public Amigos getNombre() {
+        return nombre;
     }
+
+    public void setNombre(Amigos nombre) {
+        this.nombre = nombre;
+    }
+
     
+
+    @Override
+    public String toString() {
+        return "Amigos{"+ nombre + '}';
+    }
     
 }

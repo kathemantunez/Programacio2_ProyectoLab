@@ -18,6 +18,7 @@ public class Usuario_comun extends Usuario{
     private ArrayList<Candidatos> candidatos=new ArrayList();
     private String Archivo;//cambiar
     private ArrayList<Amigos> amigos=new ArrayList();
+//    private LISTA amigos=new LISTA();
     private String name;
 
     public Usuario_comun() {
@@ -37,6 +38,14 @@ public class Usuario_comun extends Usuario{
     public void setName(String name) {
         this.name = name;
     }
+//
+//    public LISTA getAmigos() {
+//        return amigos;
+//    }
+//
+//    public void setAmigos(LISTA amigos) {
+//        this.amigos = amigos;
+//    }
 
    
     
@@ -77,8 +86,8 @@ public class Usuario_comun extends Usuario{
         return amigos;
     }
 
-    public void setAmigos(ArrayList<Amigos> amigos) {
-        this.amigos = amigos;
+    public void setAmigos(Amigos amigos) {
+        this.amigos.add(amigos);
     }
 
     @Override
